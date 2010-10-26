@@ -1,4 +1,4 @@
-##install:
+##Install:
 
 simply install the gem:
 
