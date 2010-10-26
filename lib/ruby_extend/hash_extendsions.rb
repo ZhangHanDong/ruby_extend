@@ -2,6 +2,7 @@ module RubyExtend
   module HashExtendsions
     def self.included(base)
       base.send :include, InstanceMethods
+      base.send :extend, ClassMethods
     end
 
     module InstanceMethods
@@ -12,9 +13,14 @@ module RubyExtend
         }
         return hash_new
       end
-    end
-  end
-end
+    end#InstanceMethods
+    
+    module ClassMethods
+      #TODO
+    end#ClassMethods
+    
+  end #HashExtendsions
+end #RubyExtend
 
 class Hash
   include RubyExtend::HashExtendsions
