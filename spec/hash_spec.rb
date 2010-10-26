@@ -10,7 +10,7 @@ describe "RubyExtend::HashExtendsions" do
   end
   
   it "A hash data should be reversed" do
-    require 'ruby_extend'
+    require 'ruby_extendsions'
     @hash1.hash_reverse.should eql({1=>:a, 2=>:b} )
   end
 end
