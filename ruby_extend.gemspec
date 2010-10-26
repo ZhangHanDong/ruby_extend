@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.authors     = ["blackanger"]
   s.email       = ["blackanger.z@gmail.com"]
   s.homepage    = "http://rubygems.org/gems/ruby_extend"
-  s.summary     = "TODO: Write a gem summary"
+  s.summary     = "Ruby Extendsions For Hash"
   s.description = "Ruby Extendsions"
 
   s.required_rubygems_version = ">= 1.3.6"
