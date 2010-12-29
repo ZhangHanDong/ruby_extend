@@ -7,7 +7,11 @@ module RubyExtendsions
 
     module InstanceMethods
       def fill_nil(val)
-        self.inject([]){|s,a| s << a.to_s}
+        self.inject([]) {|s, a| s << (a.nil? ? a=val : a)}
+      end
+      
+      def fill_nil!(val)
+        self.each_index { |i| self[i] ||= val }
       end
     end#InstanceMethods
     

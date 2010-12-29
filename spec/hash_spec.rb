@@ -13,4 +13,5 @@ describe "RubyExtend::HashExtendsions" do
     require 'ruby_extendsions'
     @hash1.hash_reverse.should eql({1=>:a, 2=>:b} )
   end
+  
 end
