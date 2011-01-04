@@ -22,6 +22,16 @@ module RubyExtendsions
           s << t << '),'
         end.chop
       end
+      
+      #whether the array is all nil item
+      # like arr = [nil,nil,nil,nil]
+      # arr.is_nil_all? #=> true
+      def is_nil_all?
+        b = true
+        self.each {|i|  b = false if !i.nil? }
+        return b
+      end
+      
     end#InstanceMethods
     
     module ClassMethods
