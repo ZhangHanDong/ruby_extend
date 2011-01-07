@@ -32,6 +32,11 @@ module RubyExtendsions
         return b
       end
       
+      #Random return an Array item
+      def random
+        return self[rand(self.size)]
+      end
+
     end#InstanceMethods
     
     module ClassMethods

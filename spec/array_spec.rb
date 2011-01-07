@@ -31,4 +31,10 @@ describe "RubyExtend::ArrayExtendsions" do
     @arr4.is_nil_all?.should eql false
   end
   
+  it "should can random return an Array item" do
+    require 'ruby_extendsions'
+    arr = [1,2,3,4,5,6,7,8]
+    arr.random.should be_a_kind_of(Fixnum)
+  end
+  
 end

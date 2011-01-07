@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "ruby_extendsions"
-  s.version     = "0.1.5"
+  s.version     = "0.1.6"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["blackanger"]
   s.email       = ["blackanger.z@gmail.com"]
@@ -12,7 +12,6 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project         = "ruby_extendsions"
-
   s.add_development_dependency "bundler", ">= 1.0.0"
   s.add_development_dependency "rspec"
 
