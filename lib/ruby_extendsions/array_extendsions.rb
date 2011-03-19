@@ -49,8 +49,12 @@ module RubyExtendsions
         return if  l>u
         m=(l+u)/2
         return if !(e.class == self[m].class)
-        e < self[m] ? u=m-1 : l=m+1
-        e == self[m] ? m : binary_search_index(e,l,u)
+        begin
+          e < self[m] ? u=m-1 : l=m+1
+          e == self[m] ? m : binary_search_index(e,l,u)
+        rescue
+          return nil
+        end
       end
 
       # 基于二分查找的include?
@@ -60,9 +64,7 @@ module RubyExtendsions
 
       #比较两个数组内容相同,不包含顺序
       def compare_content com_arr
-        arr = Set.new self
-        com_arr = Set.new com_arr
-        return arr == com_arr
+        Set.new(self) == Set.new(com_arr)
       end
 
     end#InstanceMethods
