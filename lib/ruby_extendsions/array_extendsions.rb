@@ -45,10 +45,6 @@ module RubyExtendsions
         return self[rand(self.size)]
       end
       
-      def stringify_items
-        
-      end
-      
       # 把数组元素全部转换为字符串，只是一层。
       def stringify_items!
         self.each_with_index do |item, i|
