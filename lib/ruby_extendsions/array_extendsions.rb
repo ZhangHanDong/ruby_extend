@@ -45,7 +45,7 @@ module RubyExtendsions
         return self[rand(self.size)]
       end
       
-      # 把数组元素全部转换为字符串，只是一层。
+      # 把数组元素全部转换为字符串。
       def stringify_items!
         self.each_with_index do |item, i|
           item.is_a?(Array) ? item.stringify_items! : self[i] = item.to_s
