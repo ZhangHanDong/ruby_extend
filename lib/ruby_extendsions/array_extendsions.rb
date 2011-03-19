@@ -1,10 +1,11 @@
 module RubyExtendsions
   module ArrayExtendsions
-    def self.included(base)
-      base.send :include, InstanceMethods
-      base.send :extend, ClassMethods
-    end
-
+    # def self.included(base)
+    #       base.send :include, InstanceMethods
+    #       base.send :extend, ClassMethods
+    #     end
+    extend ActiveSupport::Concern
+    
     module InstanceMethods
       def fill_nil(val)
         self.inject([]) {|s, a| s << (a.nil? ? a=val : a)}
@@ -53,8 +54,15 @@ module RubyExtendsions
       end
       
       # 基于二分查找的include?
-      def b_include?(e)
+      def b_include? e
         !self.binary_search_index(e).nil?
+      end
+      
+      #比较两个数组内容相同
+      def compare_content com_arr
+        arr = Set.new self
+        com_arr = Set.new com_arr
+        return arr == com_arr
       end
 
     end#InstanceMethods

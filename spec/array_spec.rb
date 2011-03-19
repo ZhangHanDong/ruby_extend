@@ -45,4 +45,12 @@ describe "RubyExtend::ArrayExtendsions" do
     arr.b_include?(9999).should be_true
   end
   
+  it "should be compare the elements between the two Array objects" do
+    arr, brr = [1,2,3], [3,2,1]
+    foo, bar = [1,2,3], [3,2,1,4]
+    arr.compare_content(brr).should be_true
+    foo.compare_content(bar).should be_false
+    (arr == brr ).should be_false
+  end
+  
 end
