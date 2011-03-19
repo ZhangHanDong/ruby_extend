@@ -37,4 +37,12 @@ describe "RubyExtend::ArrayExtendsions" do
     arr.random.should be_a_kind_of(Fixnum)
   end
   
+  it "binary search should be use an Array object" do
+    require 'ruby_extendsions'
+    arr = (0..1000000).to_a
+    arr.should respond_to(:binary_search_index)
+    arr.should respond_to(:b_include?)
+    arr.b_include?(9999).should be_true
+  end
+  
 end

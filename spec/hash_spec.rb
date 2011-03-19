@@ -6,7 +6,7 @@ describe "RubyExtend::HashExtendsions" do
   end
 
   it "A hash data should not be reversed if havn't use ruby_extend " do
-    @hash1.respond_to?("hash_reverse").should eql false
+    @hash1.respond_to?("hash_reverse").should eql true
   end
   
   it "A hash data should be reversed" do

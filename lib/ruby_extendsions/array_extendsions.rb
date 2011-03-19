@@ -32,9 +32,30 @@ module RubyExtendsions
         return b
       end
       
+      #for rails
+      def is_blank_all?
+        b = true
+        self.each {|i|  b = false if !i.blank? }
+        return b
+      end
+      
       #Random return an Array item
       def random
         return self[rand(self.size)]
+      end
+
+      # 二分查找返回数组index
+      def binary_search_index(e, l = 0, u = length - 1)
+        return if  l>u
+        m=(l+u)/2
+        return if !(e.class == self[m].class)
+        (e < self[m] ? u=m-1 : l=m+1) 
+        e == self[m] ? m : binary_search_index(e,l,u)
+      end
+
+      # 基于二分查找的include?
+      def b_include?(e)
+        !self.binary_search_index(e).nil?
       end
 
     end#InstanceMethods
