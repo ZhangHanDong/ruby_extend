@@ -44,6 +44,22 @@ module RubyExtendsions
       def random
         return self[rand(self.size)]
       end
+      
+      def stringify_items
+        
+      end
+      
+      # 把数组元素全部转换为字符串，只是一层。
+      def stringify_items!
+        self.each_with_index do |item, i|
+          item.is_a?(Array) ? item.stringify_items! : self[i] = item.to_s
+        end
+      end
+      
+      def stringify_items
+        Marshal.load(Marshal.dump(self)).stringify_items!
+      end
+      
       # 二分查找返回数组index, 只限于可排序的元素
       def binary_search_index(e, l = 0, u = length - 1)
         return if  l>u

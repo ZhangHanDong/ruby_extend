@@ -53,4 +53,13 @@ describe "RubyExtend::ArrayExtendsions" do
     (arr == brr ).should be_false
   end
   
+  it "should be change to string" do
+    arr, brr = [:a, [1,2,:cddd], :d, 1], [:b, [3,4,false], :b,2]
+    arr.stringify_items!
+    arr.should_not be == [:a, [1,2,:cddd], :d, 1]
+    arr.should be == ['a', ['1','2','cddd'], 'd', '1']
+    brr.stringify_items.should be ==  ["b", ["3", "4", "false"], "b", "2"]
+    brr.should be == [:b, [3,4,false], :b,2]
+  end
+  
 end
