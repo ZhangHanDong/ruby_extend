@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "ruby_extendsions"
-  s.version     = "0.1.8.1"
+  s.version     = "0.1.8.2"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["blackanger"]
   s.email       = ["blackanger.z@gmail.com"]
@@ -14,7 +14,6 @@ Gem::Specification.new do |s|
   s.rubyforge_project         = "ruby_extendsions"
   s.add_development_dependency "bundler", ">= 1.0.0"
   s.add_development_dependency "rspec"
-  s.add_development_dependency "rails", ">=3.0.5"
 
   s.files        = `git ls-files`.split("\n")
   s.executables  = `git ls-files`.split("\n").map{|f| f =~ /^bin\/(.*)/ ? $1 : nil}.compact
