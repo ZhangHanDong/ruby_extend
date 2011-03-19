@@ -59,8 +59,12 @@ module RubyExtendsions
 
       # 基于二分查找的include?
       def b_include? e
-        temp = self.sort
-        !temp.binary_search_index(e).nil?
+        begin
+          temp = self.sort
+          !temp.binary_search_index(e).nil?
+        rescue
+          return false
+        end
       end
 
       #比较两个数组内容相同,不包含顺序
