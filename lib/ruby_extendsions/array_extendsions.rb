@@ -44,7 +44,7 @@ module RubyExtendsions
       def random
         return self[rand(self.size)]
       end
-      # 二分查找返回数组index
+      # 二分查找返回数组index, 目前只限于元素为数字的数组
       def binary_search_index(e, l = 0, u = length - 1)
         return if  l>u
         m=(l+u)/2
@@ -58,7 +58,7 @@ module RubyExtendsions
         !self.binary_search_index(e).nil?
       end
 
-      #比较两个数组内容相同
+      #比较两个数组内容相同,不包含顺序
       def compare_content com_arr
         arr = Set.new self
         com_arr = Set.new com_arr
