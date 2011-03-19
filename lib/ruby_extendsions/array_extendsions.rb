@@ -44,7 +44,7 @@ module RubyExtendsions
       def random
         return self[rand(self.size)]
       end
-      # 二分查找返回数组index, 目前只限于元素为数字的数组
+      # 二分查找返回数组index, 只限于可排序的元素
       def binary_search_index(e, l = 0, u = length - 1)
         return if  l>u
         m=(l+u)/2
@@ -59,7 +59,8 @@ module RubyExtendsions
 
       # 基于二分查找的include?
       def b_include? e
-        !self.binary_search_index(e).nil?
+        temp = self.sort
+        !temp.binary_search_index(e).nil?
       end
 
       #比较两个数组内容相同,不包含顺序
