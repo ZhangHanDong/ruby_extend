@@ -60,6 +60,13 @@ describe "RubyExtend::ArrayExtendsions" do
     arr.should be == ['a', ['1','2','cddd'], 'd', '1']
     brr.stringify_items.should be ==  ["b", ["3", "4", "false"], "b", "2"]
     brr.should be == [:b, [3,4,false], :b,2]
+    
+    arr2 = [1,4,6,'sf', 'fs', 8, 2]
+    arr2.b_include?('sf').should be_true
+    arr2.b_include?(1).should be_true
+    arr2.b_include?('fs').should be_true
+    arr2.b_include?('8').should be_false
+    
   end
   
 end
