@@ -60,19 +60,17 @@ module RubyExtendsions
       def binary_search_index(e, l = 0, u = length - 1)
         return if  l>u
         m=(l+u)/2
-        return if !(e.class == self[m].class)
         begin
-          e < self[m] ? u=m-1 : l=m+1
+          e.to_s < self[m].to_s ? u=m-1 : l=m+1
           e == self[m] ? m : binary_search_index(e,l,u)
         rescue
-          return nil
+          nil
         end
       end
 
-      # 基于二分查找的include?
       def b_include? e
         begin
-          temp = self.sort
+          temp = self.sort_by{|i| i.to_s}
           !temp.binary_search_index(e).nil?
         rescue
           return false
